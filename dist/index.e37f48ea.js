@@ -599,8 +599,19 @@ const timeout = function(s) {
 ///////////////////////////////////////
 //https://forkify-api.herokuapp.com/api/v2/recipes/:id
 // api key : 318b1fa2-d8bc-4c01-a58d-b9f909129906
+const renderSpinner = function(parentEl) {
+    const markup = `
+    <div class="spinner">
+          <svg>
+            <use href="${(0, _iconsSvgDefault.default)}#icon-loader"></use>
+          </svg>
+        </div>
+  `;
+    parentEl.innerHTML = "";
+    parentEl.insertAdjacentHTML("afterbegin", markup);
+};
 const showRecipe = async function() {
-    console.log("Hello");
+    renderSpinner(recipeContainer);
     try {
         const res = await fetch("https://forkify-api.herokuapp.com/api/v2/recipes/664c8f193e7aa067e94e8a12");
         const data = await res.json();
