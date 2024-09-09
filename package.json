@@ -1,0 +1,23 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "Recipe Application",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KrumBezmenov/forkify-app.git"
+  },
+  "author": "Krum Bezmenov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KrumBezmenov/forkify-app/issues"
+  },
+  "homepage": "https://github.com/KrumBezmenov/forkify-app#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
