@@ -2,10 +2,10 @@
   "name": "forkify",
   "version": "1.0.0",
   "description": "Recipe Application",
-  "main": "index.js",
+  "default": "index.html",
   "scripts": {
-    "start": "parcel app/index.html",
-    "build": "parcel build app/index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
