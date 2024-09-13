@@ -4,12 +4,17 @@ import recipeView from './views/recipeView.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import searchView from './views/searchView.js';
+import resultsView from './views/resultsView.js';
 
 // https://forkify-api.herokuapp.com/v2
 
 ///////////////////////////////////////
 //https://forkify-api.herokuapp.com/api/v2/recipes/:id
 // api key : 318b1fa2-d8bc-4c01-a58d-b9f909129906
+
+if (module.hot) {
+  module.hot.accept();
+}
 
 const controlRecipes = async function () {
   try {
@@ -34,7 +39,8 @@ const controlSearchResults = async function () {
     if (!query) return;
 
     await model.loadSearchResults(query);
-    console.log(model.state.search.results);
+
+    resultsView.render(model.state.search.results);
   } catch (error) {
     console.log(error);
   }
