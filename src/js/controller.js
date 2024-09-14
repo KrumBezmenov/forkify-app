@@ -12,9 +12,9 @@ import resultsView from './views/resultsView.js';
 //https://forkify-api.herokuapp.com/api/v2/recipes/:id
 // api key : 318b1fa2-d8bc-4c01-a58d-b9f909129906
 
-if (module.hot) {
-  module.hot.accept();
-}
+// if (module.hot) {
+//   module.hot.accept();
+// }
 
 const controlRecipes = async function () {
   try {
@@ -40,7 +40,8 @@ const controlSearchResults = async function () {
 
     await model.loadSearchResults(query);
 
-    resultsView.render(model.state.search.results);
+    //resultsView.render(model.state.search.results);
+    resultsView.render(model.getSearchResultsPage());
   } catch (error) {
     console.log(error);
   }
